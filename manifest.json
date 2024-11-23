@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "KhanHack",
+  "version": "5.7.1",
+  "description": "Khan Academy Answer Hack",
+  "background": {
+    "service_worker": "sw.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["activeTab", "userScripts", "storage"],
+  "host_permissions": [
+    "*://*.khanacademy.org/*"
+  ],
+  "content_scripts": [{
+    "matches": ["*://*.khanacademy.org/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }]
+}
